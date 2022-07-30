@@ -1,5 +1,7 @@
 <?php
+require_once('includes/session.php');
 include('includes/functions.php');
+is_user_login();
 require_once('classes/Database.php');
 
 

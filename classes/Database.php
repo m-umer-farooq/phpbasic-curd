@@ -24,6 +24,14 @@ class Database{
       mysqli_close($this->conn);
     }
 
+    public function login_user_check($username, $password){
+
+      $sql = "SELECT * FROM `employee` WHERE `username` = '".$username."' AND `password` = '".$password."' LIMIT 1";
+      $result = mysqli_query($this->conn, $sql);
+      $row = $result->fetch_object();
+      return $row;
+    }
+
     public function execute_query($query){
 
         if (mysqli_query($this->conn, $query)) {
